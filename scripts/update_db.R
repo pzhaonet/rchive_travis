@@ -122,5 +122,9 @@ df_coscsv <- df_coscsv[!duplicated(df_coscsv$Title), ]
 RDSfile <- 'db_new.RData'
 message('Writing db.Rdata...')
 save(file = RDSfile, list = c('df_coscsv', 'df_rdevelcsv', 'df_rhelpcsv'))
+write.csv(df_rdevelcsv, 'df_rdevelcsv.csv')
+write.csv(df_rhelpcsv, 'df_rhelpcsv.csv')
+write.csv(df_coscsv, 'df_coscsv.csv')
+
 message('Well done!')
 
