@@ -10,8 +10,7 @@ git config --global user.name "baydap"
 
 git clone -b gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
 cd book-output
-# cp -r ../scripts/db.RData ./
-cp -r ../* ./
+cp -r ../scripts/* ./
 git add --all *
 git commit -m"Update by travis" || true
 git push -q origin gh-pages
