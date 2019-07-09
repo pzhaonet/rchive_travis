@@ -90,8 +90,13 @@ calc_df_cos <- function(df){
 }
 
 # update: new version
-RDSfile <- 'db.RData'
+
+message('reading db.Rdata')
+
+RDSfile <- 'db.RData...'
 load(RDSfile)
+
+message('update db.Rdata...')
 df_coscsv$Month <- as.character(df_coscsv$Month)
 last_update <- difftime(Sys.Date(), as.Date(file.info(RDSfile)$mtime))
 newmonth <- ceiling(as.numeric(as.duration(last_update),  'months'))
@@ -115,4 +120,7 @@ df_coscsv <- df_coscsv[!duplicated(df_coscsv$Title), ]
 
 
 RDSfile <- 'db_new.RData'
+message('Writing db.Rdata...')
 save(file = RDSfile, list = c('df_coscsv', 'df_rdevelcsv', 'df_rhelpcsv'))
+message('Well done!')
+
