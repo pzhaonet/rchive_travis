@@ -10,4 +10,4 @@ set -ev
 # Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
 # Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::epub_book')"
 # make gitbook the last target to add the links to pdf and epub
-Rscript -e "source('scripts/update_db.R')"
+Rscript "scripts/update_db.R"
