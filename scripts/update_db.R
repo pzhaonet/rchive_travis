@@ -93,7 +93,7 @@ calc_df_cos <- function(df){
 
 message('reading db.Rdata')
 
-RDSfile <- 'db.RData...'
+RDSfile <- 'db.RData'
 load(RDSfile)
 
 message('update db.Rdata...')
